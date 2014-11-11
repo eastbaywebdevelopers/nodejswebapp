@@ -1,0 +1,23 @@
+<div class="row">
+<h1>Customers</h1>
+</div>
+
+{{#if flash}}
+    <div class="alert alert-dismissable alert-{{flash.type}}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{flash.message}}
+    </div>
+{{/if}}
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+    {{#each customers}}
+    <tr>
+        <td><a href="/customers/edit/{{id}}">{{name}}</a></td>
+        <td>{{phone}}</td>
+    </tr>
+    {{/each}}
+</table>
